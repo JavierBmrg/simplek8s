@@ -23,3 +23,13 @@ Tipical commands
 
 - Show deployments objects  
   `kubectl get deployments`
+
+- Re-pull containers in order to update Deployments/Pods (Imperative)
+  `kubectl set image <object-type>/<object-name> <container-name> = <new image to use>`
+  example: `kubectl set image deployment/client-deployment client=ewfnz/react-nginx-client:v1`
+
+## Flow
+
+- Build a new image and set a tag.
+- Push the image to Container Repository
+- Use the image(s) for deployments/pods
